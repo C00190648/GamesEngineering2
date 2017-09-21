@@ -1,0 +1,12 @@
+﻿  Source.cpp
+c:\users\gameuser\documents\game eng 2\designpatterns\source.cpp(48): warning C4018: '<': signed/unsigned mismatch
+  Proxy.cpp
+  Impl.cpp
+  IGraphic.cpp
+  GraphiProxy.cpp
+  Graphics.cpp
+  BridgePattern.cpp
+  Generating Code...
+Impl.obj : error LNK2005: _main already defined in BridgePattern.obj
+Source.obj : error LNK2005: _main already defined in BridgePattern.obj
+C:\Users\gameuser\Documents\Game Eng 2\DesignPatterns\Debug\DesignPatterns.exe : fatal error LNK1169: one or more multiply defined symbols found
