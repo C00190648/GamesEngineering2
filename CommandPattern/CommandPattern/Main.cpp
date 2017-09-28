@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	windowSurface = SDL_GetWindowSurface(window);
 	InputHandler input;
 
-	while (SDL_PollEvent(&event) != 0)
+	while (true)
 	{
 		if (SDL_PollEvent(&event))
 		{
@@ -29,10 +29,6 @@ int main(int argc, char *argv[])
 		SDL_UpdateWindowSurface(window);
 	}
 	SDL_FreeSurface(windowSurface);
-
-	SDL_DestroyWindow(window);
-	
-	SDL_Quit();
-
+	system("pause");
 	return EXIT_SUCCESS;
 }
