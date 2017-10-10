@@ -1,4 +1,5 @@
 #include <SDL.h>
+#include "Animation.h"
 
 const int WIDTH = 800, HEIGHT = 600;
 
@@ -6,6 +7,7 @@ int main(int argc, char *argv[])
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
 
+	Animation fsm;
 	SDL_Event event;
 	SDL_Surface *windowSurface = NULL;
 
@@ -20,6 +22,16 @@ int main(int argc, char *argv[])
 			if (SDL_QUIT == event.type)
 			{
 				break;
+			}
+
+			switch (event.type)
+			{
+			case SDL_KEYDOWN:
+				switch (event.key.keysym.sym)
+				{
+				case SDLK_SPACE:
+					fsm.jumping();
+				}
 			}
 		}
 		SDL_UpdateWindowSurface(window);
