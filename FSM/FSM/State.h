@@ -1,5 +1,10 @@
 #include "Animation.h"
 #include <iostream>
+
+#ifndef STATE_H
+#define STATE_H
+
+
 class State
 {
 
@@ -14,5 +19,17 @@ public:
 		std::cout << "State Jumping" << std::endl;
 	}
 
+	virtual void moveRight(Animation* a)
+	{
+		std::cout << "Move Right" << std::endl;
+	}
+
+	virtual void moveLeft(Animation* a)
+	{
+		std::cout << "Move Left" << std::endl;
+	}
+
 
 };
+
+#endif

@@ -1,10 +1,27 @@
+#ifndef IDLE_H
+#define IDLE_H
+
+
+
+
+
 #include "State.h"
 
 
 class Idle : public State
 {
 public:
-	Idle();
-	~Idle();
+	Idle() 
+	{
+
+	}
+	~Idle()
+	{
+
+	}
 	void jumping(Animation*a);
+	void moveRight(Animation* a);
+	void moveLeft(Animation* a);
 };
+
+#endif // !IDLE_H

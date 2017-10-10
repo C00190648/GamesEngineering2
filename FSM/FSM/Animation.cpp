@@ -1,5 +1,6 @@
 #include "Animation.h"
 #include "Idle.h"
+#include "MoveRight.h"
 
 Animation::Animation()
 {
@@ -19,4 +20,14 @@ void Animation::idle()
 void Animation::jumping()
 {
 	current->jumping(this);
+}
+
+void Animation::moveLeft()
+{
+	current->moveLeft(this);
+}
+
+void Animation::moveRight()
+{
+	current->moveRight(this);
 }

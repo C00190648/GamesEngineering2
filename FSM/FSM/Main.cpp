@@ -26,13 +26,25 @@ int main(int argc, char *argv[])
 
 			switch (event.type)
 			{
-			case SDL_KEYDOWN:
+			case SDL_KEYUP:
 				switch (event.key.keysym.sym)
 				{
 				case SDLK_SPACE:
 					fsm.jumping();
 				}
+			case SDL_KEYDOWN:
+				switch (event.key.keysym.sym)
+				{
+				case SDLK_LEFT:
+					fsm.moveLeft();
+
+				case SDLK_RIGHT:
+					fsm.moveRight();
+
+				}
 			}
+
+
 		}
 		SDL_UpdateWindowSurface(window);
 	}

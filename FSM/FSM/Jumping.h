@@ -3,8 +3,17 @@
 class Jumping : public State
 {
 public:
-	Jumping();
-	~Jumping();
+	Jumping()
+	{
 
-	void idle(Animation* a);
+	}
+	~Jumping() 
+	{
+
+	}
+
+	void idle(Animation* a) 
+	{
+
+	}
 };

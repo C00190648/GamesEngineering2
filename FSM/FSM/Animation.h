@@ -14,17 +14,11 @@ public:
 	void setCurrent(State *s) { current = s; }
 	void idle();
 	void jumping();
+	void moveRight();
+	void moveLeft();
 
-private:
 
 };
 
-//Animation::Animation()
-//{
-//}
-//
-//Animation::~Animation()
-//{
-//}
 
 #endif // !ANIMATON_H
