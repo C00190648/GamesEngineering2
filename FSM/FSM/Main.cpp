@@ -2,6 +2,8 @@
 #include <SDL_image.h>
 #include<iostream>
 #include "Animation.h"
+#include "Idle.h"
+#include "MoveRight.h"
 
 const int WIDTH = 800, HEIGHT = 600;
 const int FRAMES = 10;
@@ -12,6 +14,7 @@ int main(int argc, char *argv[])
 {
 	bool quit = false;
 	SDL_Event event;
+	Animation fsm;
 
 	SDL_Init(SDL_INIT_VIDEO);
 	IMG_Init(IMG_INIT_PNG);
@@ -28,31 +31,52 @@ int main(int argc, char *argv[])
 	SDL_SetRenderDrawColor(renderer, 168, 230, 255, 255);
 	SDL_RenderClear(renderer);
 
-	while (!quit)
+	bool pressed = false;
+
+	
+
+	while (true)
 	{
-		Uint32 ticks = SDL_GetTicks();
-		Uint32 sprite = (ticks / 100) % 8;
+		fsm.update();
 		
-
-		SDL_Rect srcrect = { sprite * 260.1, 510, 260, 260 };
-		SDL_Rect dstrect = { 10, 10, 265, 260 };
-
+		//fsm.moveRight();
 		SDL_PollEvent(&event);
-
+		if (pressed == false)
+		{
+			fsm.idle();
+		}
+		
 		switch (event.type)
 		{
 		case SDL_QUIT:
 			quit = true;
 			break;
+		case SDL_KEYDOWN:
+			switch (event.key.keysym.sym)
+			{
+
+			case SDLK_UP:
+				fsm.jumping();
+				pressed = true;
+				break;
+
+			/*case SDLK_LEFT:
+				fsm.idle();
+				break;*/
+
+			case SDLK_RIGHT:
+				fsm.moveRight();
+				pressed = true;
+				break;
+			}
+
+		case !SDL_KEYDOWN:
+			pressed = false;
 		}
-		SDL_RenderClear(renderer);
-		SDL_RenderCopy(renderer, texture, &srcrect, &dstrect);
-		SDL_RenderPresent(renderer);
+		fsm.render(renderer, texture);
 	}
 
-	SDL_DestroyTexture(texture);
-	SDL_FreeSurface(image);
-	SDL_DestroyRenderer(renderer);
+	fsm.draw(image, texture, renderer);
 	SDL_DestroyWindow(window);
 	IMG_Quit();
 	SDL_Quit();

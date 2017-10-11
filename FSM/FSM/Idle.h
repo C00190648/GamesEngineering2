@@ -22,6 +22,7 @@ public:
 	void jumping(Animation*a);
 	void moveRight(Animation* a);
 	void moveLeft(Animation* a);
+	void idle(Animation* a);
 };
 
 #endif // !IDLE_H
