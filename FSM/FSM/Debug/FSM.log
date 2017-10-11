@@ -1,9 +1,5 @@
 ﻿  Main.cpp
-  Idle.cpp
-  Generating Code...
-  Compiling...
-  MoveRIght.cpp
-  Animation.cpp
-  Generating Code...
+c:\d\gamesengineering2\fsm\fsm\main.cpp(37): warning C4838: conversion from 'double' to 'int' requires a narrowing conversion
+c:\d\gamesengineering2\fsm\fsm\main.cpp(37): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   FSM.vcxproj -> C:\d\GamesEngineering2\FSM\Debug\FSM.exe
   FSM.vcxproj -> C:\d\GamesEngineering2\FSM\Debug\FSM.pdb (Partial PDB)
