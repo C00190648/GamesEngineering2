@@ -23,8 +23,10 @@ private:
 
 Entity::Entity()
 {
+
 }
 
 Entity::~Entity()
 {
+
 }
